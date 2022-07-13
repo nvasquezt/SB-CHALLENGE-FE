@@ -36,38 +36,38 @@ export default function Home() {
             </>
           )}
         </Map>
-        <table className={styles.table}>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Latitude</th>
-              <th>Longitude</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                reference
-              </td>
-              <td>
-                4.684335
-              </td>
-              <td>
-                -74.113644
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div className={styles.datagrid}>
+          <table>
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Location</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>data</td>
+                <td>data</td>
+                <td>data</td>
+                <td>data</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </main>
-
+      <div className={styles.buttonsBox}>
+      <button>Add new location</button>
+      <button>Delete location</button>
+      </div>
       <footer className={styles.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
+          Powered by
         </a>
       </footer>
     </div>
