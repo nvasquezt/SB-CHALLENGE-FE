@@ -36,7 +36,7 @@
   .homeMap {
     border-radius: 5px;
     margin-top: 3rem;
-    width: 90vw;
+    width: 80vw;
     height: 70vh;
     margin-bottom: 3rem;
   }
@@ -138,4 +138,24 @@
 .logo {
     height: 1em;
   }
+
+.buttonsBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.button{
+    width: 10rem;
+    height: 2rem;
+    border-radius: 5px;
+    border: 1px solid #006699;
+    background-color: #006699;
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 1rem;
+}
   

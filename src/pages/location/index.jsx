@@ -1,11 +1,18 @@
+import { useState } from 'react';
 import Head from 'next/head';
 import Header from '../../Components/Header';
 import Map from '../../Components/Map';
+import NewLocation from '../../Components/NewLocation';
 import styles from '../../../styles/Location.module.css';
 
 const center = [4.684335, -74.113644]
 
 export default function Home() {
+  const [openNewLocation, setOpenNewLocation] = useState(false);
+
+  const handleOpenNewLocation = () => {
+    setOpenNewLocation(!openNewLocation);
+  }
   return (
     <div className={styles.container}>
       <Header />
@@ -60,9 +67,11 @@ export default function Home() {
         </div>
       </main>
       <div className={styles.buttonsBox}>
-      <button>Add new location</button>
-      <button>Delete location</button>
+      <button className={styles.button} onClick={handleOpenNewLocation}>
+        Add new location</button>
+      <button className={styles.button}>Delete location</button>
       </div>
+      {openNewLocation && <NewLocation />}
       <footer className={styles.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"

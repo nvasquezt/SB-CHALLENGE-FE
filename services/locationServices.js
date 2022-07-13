@@ -1,4 +1,4 @@
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = 'http://localhost:8080';
 
 export const getAllLocations = async () => {
   try{
@@ -42,7 +42,7 @@ export const createLocation = async (location) => {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify(annotation),
+      body: JSON.stringify(location),
     });
     const data = await response.json();
     return data;
