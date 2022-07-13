@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Header from '../../components/Header';
 import Map from '../../Components/Map';
 import styles from '../../../styles/Location.module.css';
 
@@ -7,6 +8,7 @@ const center = [4.684335, -74.113644]
 export default function Home() {
   return (
     <div className={styles.container}>
+      <Header />
       <Head>
         <title>Spy Bee Challenge Location</title>
         <link rel="icon" href="/favicon.ico" />

@@ -1,13 +1,11 @@
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = 'http://localhost:8080';
 
 export const createUser = async (payload) => {
   try {
-    const token = sessionStorage.getItem('token');
     const response = await fetch(`${API_URL}/api/users`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify(payload),
     });
