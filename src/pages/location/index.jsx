@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Header from '../../components/Header';
+import Header from '../../Components/Header';
 import Map from '../../Components/Map';
 import styles from '../../../styles/Location.module.css';
 
