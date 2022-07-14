@@ -91,3 +91,15 @@
     background: none; 
     background-color:#006699;
 }
+.containerNoLocation{
+    width: 60vw;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E1EEf4;
+}
+.noLocations{
+    color: red;
+    font-size: 1.3rem;
+}

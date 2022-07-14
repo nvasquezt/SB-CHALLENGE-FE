@@ -14,7 +14,11 @@ const LocationTable = () => {
     } , [])
 
     if (locations !== undefined && locations.length<1) {
-        return <div>Please add a new Location</div>
+        return (
+        <div className={styles.containerNoLocation}>
+            <span className={styles.noLocations}> Please add a new Location</span>
+        </div>
+            )
     } else {
         return (
             <div className={styles.datagrid}>
