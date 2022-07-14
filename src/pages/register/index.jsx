@@ -22,7 +22,11 @@ const Register = () => {
     const handleSubmit = async(e) => {
         e.preventDefault();
         const user = await createUser(signup);
-        console.log(user);
+        if (user) {
+            window.location.href = '/';
+        } else {
+            alert('User creation failed');
+        }
     }
     
     return (
