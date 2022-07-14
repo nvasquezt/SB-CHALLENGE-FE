@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8080';
+const API_URL = 'https://sb-challenge-be.herokuapp.com';
 
 export const createUser = async (payload) => {
   try {
