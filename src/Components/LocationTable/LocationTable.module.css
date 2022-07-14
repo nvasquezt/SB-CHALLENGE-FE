@@ -1,4 +1,6 @@
+
 .datagrid table { 
+    padding: 0 1rem;
     border-collapse: collapse;
     text-align: left;
     width: 100%; 
