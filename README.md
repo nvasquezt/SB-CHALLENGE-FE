@@ -1,3 +1,14 @@
+## User and Password
+
+You can acces since signup, but if it is required, a testing account is: 
+
+email: user@testing.com
+
+password: 123456
+
+
+
+##
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
