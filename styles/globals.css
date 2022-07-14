@@ -10,8 +10,9 @@ body {
 }
 
 a {
-  color: inherit;
+  color: rgb(18, 114, 1);
   text-decoration: none;
+  
 }
 
 * {
