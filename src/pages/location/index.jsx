@@ -1,6 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Header from '../../Components/Header';
+import { getAllLocations } from '../../../services/locationServices'
+import LocationTable from '../../Components/LocationTable';
 import Map from '../../Components/Map';
 import NewLocation from '../../Components/NewLocation';
 import styles from '../../../styles/Location.module.css';
@@ -9,6 +11,16 @@ const center = [4.684335, -74.113644]
 
 export default function Home() {
   const [openNewLocation, setOpenNewLocation] = useState(false);
+  const [locations, setLocations] = useState()
+  
+  const enableAllLocations = async() => {
+      const payload = await getAllLocations();
+      setLocations(payload);
+  }
+
+  useEffect(() => {
+    enableAllLocations();
+  } , [])
 
   const handleOpenNewLocation = () => {
     setOpenNewLocation(!openNewLocation);
@@ -28,7 +40,7 @@ export default function Home() {
 
         <Map 
         className={styles.homeMap}
-        center={center} zoom={13}
+        center={center} zoom={12}
         scrollWheelZoom={false}
         >
           {({ TileLayer, Marker, Popup }) => (
@@ -37,34 +49,19 @@ export default function Home() {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
               />
-              <Marker position={center}>
-                <Popup>
-                  A pretty CSS3 popup. <br /> Easily customizable.
-                </Popup>
-              </Marker>
+              {locations && locations.map(location => (
+                <Marker key={location.id} position={[location.lat, location.lng]}>
+                  <Popup>
+                    <span>Address: {location.address}</span> <br />
+                    <span>City: {location.city}</span> <br />
+                    <span>Country: {location.country}</span> <br />
+                  </Popup>
+                </Marker>
+              ))}
             </>
           )}
         </Map>
-        <div className={styles.datagrid}>
-          <table>
-            <thead>
-              <tr>
-                <th>Id</th>
-                <th>Location</th>
-                <th>Latitude</th>
-                <th>Longitude</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>data</td>
-                <td>data</td>
-                <td>data</td>
-                <td>data</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <LocationTable />
       </main>
       <div className={styles.buttonsBox}>
       <button className={styles.button} onClick={handleOpenNewLocation}>

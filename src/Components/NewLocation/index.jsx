@@ -19,6 +19,7 @@ const NewLocation = () => {
   const handleSubmit = async(e) => {
     e.preventDefault();
     await createLocation(payload);
+    window.location.reload();
   }
   return (
     <div className={styles.newLocation}>
