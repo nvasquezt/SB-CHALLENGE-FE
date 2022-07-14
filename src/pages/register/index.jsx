@@ -3,7 +3,7 @@ import React from 'react';
 import Head from 'next/head';
 import styles from '../../../styles/Signup.module.css';
 import Link from 'next/link';
-import { createUser } from '../../../services/userServices';
+import { createUser } from '../../../api/userServices';
 
 const Register = () => {
     const [signup, setSignup] = useState({
