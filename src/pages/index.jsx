@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Head from 'next/head';
-import {login} from '../../services/loginServices'
+import {login} from '../../api/loginServices'
 import styles from '../../styles/Home.module.css';
 import Link from 'next/link';
 

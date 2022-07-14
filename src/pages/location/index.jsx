@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Header from '../../Components/Header';
-import { getAllLocations } from '../../../services/locationServices'
+import { getAllLocations } from '../../../api/locationServices'
 import LocationTable from '../../Components/LocationTable';
 import Map from '../../Components/Map';
 import NewLocation from '../../Components/NewLocation';

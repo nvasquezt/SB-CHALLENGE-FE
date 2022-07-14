@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import styles from './NewLocation.module.css'
-import { createLocation } from '../../../services/locationServices'
+import { createLocation } from '../../../api/locationServices'
 
 const NewLocation = () => {
   const [payload, setPayload] = useState({

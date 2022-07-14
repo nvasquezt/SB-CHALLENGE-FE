@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { getAllLocations } from '../../../services/locationServices'
+import { getAllLocations } from '../../../api/locationServices'
 import styles from './LocationTable.module.css'
 
 const LocationTable = () => {
